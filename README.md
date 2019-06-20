@@ -1,18 +1,17 @@
-# Drone CI – Setup
+# Drone CI
 
 ## Startup
-### Startup – Drone CI
+### Drone CI – Startup
 ```sh
 docker-compose -f docker-compose.yml -f docker-compose.dropbox.yml up -d
-
 ```
 
-### Startup – serveo.net
+### serveo.net – Startup
 ```sh
 while true; do ssh -i ./data/serveo.net/id_rsa -R ci.signalwerk.ch:80:localhost:80 serveo.net; done
 ```
 
-## Setup
+# Drone CI – Setup
 * clone
 * copy configs & edit
 ```sh
@@ -31,6 +30,9 @@ docker-compose -f docker-compose.yml -f docker-compose.dropbox.yml build --no-ca
 ```
 
 Uploader can be found [here](https://github.com/andreafabrizi/Dropbox-Uploader).
+
+### serveo.net – Setup
+* See [Readme for serveo](./README-serveo.md)
 
 ### Todo
 #### Restart if not available
