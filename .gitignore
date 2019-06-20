@@ -1,0 +1,5 @@
+.env
+data/config/.dropbox_uploader
+data/serveo.net/id_rsa
+data/serveo.net/id_rsa.pub
+data/*.sqlite

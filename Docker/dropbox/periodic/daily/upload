@@ -1,0 +1,5 @@
+#!/bin/sh
+# backup workdir
+
+echo "* Run uploader"
+/opt/dropbox_uploader/dropbox_uploader.sh -f /config/.dropbox_uploader upload /workdir /

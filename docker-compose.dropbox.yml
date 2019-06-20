@@ -1,0 +1,10 @@
+version: "3.2"
+
+services:
+  dropbox:
+    restart: always
+    build: "./Docker/dropbox"
+    container_name: drone-dropbox
+    volumes:
+      - ./data/config:/config
+      - ./:/workdir

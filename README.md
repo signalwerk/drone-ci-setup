@@ -1,7 +1,17 @@
-# drone-ci-setup
+# Startup
 
+```sh
 
-### Todo
-#### Restart if not available
-* [web check](https://serverfault.com/questions/562524/bash-script-to-check-if-a-public-https-site-is-up)
-* [Restart Process](https://www.oipapio.com/question-238641)
+docker-compose -f docker-compose.yml -f docker-compose.dropbox.yml up -d
+while true; do ssh -i ./data/serveo.net/id_rsa -R ci.signalwerk.ch:80:localhost:80 serveo.net; done
+
+```
+
+## Rebuild Dropbox Uploader
+
+```sh
+docker-compose stop
+docker-compose -f docker-compose.yml -f docker-compose.dropbox.yml build --no-cache
+```
+
+Uploader can be found [here](https://github.com/andreafabrizi/Dropbox-Uploader).

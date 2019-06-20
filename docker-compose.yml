@@ -1,0 +1,19 @@
+version: "3.2"
+
+services:
+  drone-server:
+    image: drone/drone:1
+    container_name: drone-server
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/data
+    restart: always
+    environment:
+      - DRONE_SERVER_PROTO=${DRONE_SERVER_PROTO}
+      - DRONE_SERVER_HOST=${DRONE_SERVER_HOST}
+      - DRONE_GITHUB_CLIENT_ID=${DRONE_GITHUB_CLIENT_ID}
+      - DRONE_GITHUB_CLIENT_SECRET=${DRONE_GITHUB_CLIENT_SECRET}
+      - DRONE_USER_CREATE=username:signalwerk,admin:true
