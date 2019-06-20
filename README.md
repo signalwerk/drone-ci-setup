@@ -12,9 +12,6 @@ docker-compose -f docker-compose.yml -f docker-compose.dropbox.yml up -d
 while true; do ssh -i ./data/serveo.net/id_rsa -R ci.signalwerk.ch:80:localhost:80 serveo.net; done
 ```
 
-
-
-
 ## Setup
 * clone
 * copy configs & edit
@@ -22,8 +19,9 @@ while true; do ssh -i ./data/serveo.net/id_rsa -R ci.signalwerk.ch:80:localhost:
 cp ./data/config/.dropbox_uploader_default ./data/config/.dropbox_uploader
 cp ./.env_default ./.env
 ```
+* edit `.env`
+* edit `./data/config/.dropbox_uploader`
 * startup (see Startup-Section)
-
 
 ## Rebuild Dropbox Uploader
 
@@ -33,7 +31,6 @@ docker-compose -f docker-compose.yml -f docker-compose.dropbox.yml build --no-ca
 ```
 
 Uploader can be found [here](https://github.com/andreafabrizi/Dropbox-Uploader).
-
 
 ### Todo
 #### Restart if not available
