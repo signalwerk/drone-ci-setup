@@ -8,7 +8,7 @@ docker-compose -f docker-compose.yml -f docker-compose.dropbox.yml up -d
 
 ### serveo.net – Startup
 ```sh
-while true; do ssh -i ./data/serveo.net/id_rsa -R ci.signalwerk.ch:80:localhost:80 serveo.net; done
+while true; do ssh -i ./data/serveo.net/id_rsa -R ci.signalwerk.ch:80:localhost:80 serveo.net; sleep 10; done
 ```
 
 # Drone CI – Setup
