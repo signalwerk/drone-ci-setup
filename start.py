@@ -20,7 +20,9 @@ def check_url( url, timeout=15 ):
     except httplib.HTTPException, e:
         print('HTTPException')
         return False
-
+    except:
+        print("Something else went wrong")
+        return False
 
 def main():
     print("--- ssh-dns start\n")
